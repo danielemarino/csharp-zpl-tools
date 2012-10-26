@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="CsvReader.cs" />
     <Compile Include="ZplFile.cs" />
-    <Compile Include="ZplDictionary.cs" />
+    <Compile Include="ZplLanguage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

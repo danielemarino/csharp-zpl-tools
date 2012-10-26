@@ -7,11 +7,11 @@ using System.Text;
 
 namespace ZPL.Tools
 {
-  public class ZplLanguage
+  public static class ZplLanguage
   {
-    public static Dictionary<string, string> Commands;
+    public static Dictionary<string, string> Commands = new Dictionary<string, string>();
 
-    public ZplLanguage()
+    static ZplLanguage()
     {
       //ZPL II Basic
       Commands.Add("^XA","");
@@ -116,7 +116,7 @@ namespace ZPL.Tools
       Commands.Add("~WC", "");
     }
 
-    public long Count
+    public static long Count
     {
       get
       {
