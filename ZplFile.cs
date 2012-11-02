@@ -310,6 +310,21 @@ namespace ZPL.Tools
       return 0;
     }
 
+    public int CommandReplace(int commandIndex, string newCommand)
+    {
+      if (commandIndex < 0 || commandIndex >= Text.Length) return -1;
+      if (!IsValidCommandTag(commandIndex)) return -2;
+
+      var nextCommandIndex = CommandIndexOf(commandIndex + 1);
+
+      if (nextCommandIndex > 0)
+        Text = Text.Substring(0, commandIndex - 1) + newCommand + Text.Substring(nextCommandIndex);
+      else
+        Text = Text.Substring(0, commandIndex - 1) + newCommand;
+
+      return 0;
+    }
+
     public string CommandExtractAndStrip(int commandIndex)
     {
       var commandTag = GetCommandTag(commandIndex);
